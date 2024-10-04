@@ -31,7 +31,7 @@ class Student:
     # Check if the student passed (based on both average and individual subject marks)
     def check_pass(self):
         # Pass if all subjects have marks >= 40 and average is >= 40
-        return self.calculate_average() >= 40 and all(mark >= 40 for mark in self.marks)
+        return self.calculate_average() >= 30 and all(mark >= 30 for mark in self.marks)
 
     # Return a dictionary of the student's details
     def get_summary(self):
@@ -124,7 +124,7 @@ if __name__== "__main__":
             print(f"Average Marks: {student.calculate_average():.2f}")
             print(f"Grade: {student.determine_grade()}")
             print(f"Passed: {'Yes' if student.check_pass() else 'No'}")
-            print("-" * 40)
+            print("-" * 30)
 
         # Classroom-level statistics
         print("Classroom Statistics:")
@@ -132,7 +132,7 @@ if __name__== "__main__":
         print(f"Top Performer: {classroom.top_performer().name}")
         print(f"Lowest Performer: {classroom.lowest_performer().name}")
         print(f"Number of Passed Students: {classroom.count_passed_students()}")
-        print("-" * 40)
+        print("-" * 30)
 
         # Generate and export student summaries
         student_summaries = classroom.generate_student_summaries()
